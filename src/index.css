@@ -38,7 +38,7 @@ body {
   width: 100vw;
   height: 100vh;
   z-index: -2;
-  background-image: url('/assets/mandala_pattern.png');
+  background-image: url('./assets/mandala_pattern.png');
   background-size: cover;
   background-position: center;
   opacity: 0.8;

@@ -1,5 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import weddingElephant from '../assets/wedding_elephant.png';
+import indianCouple from '../assets/indian_couple.png';
 
 export default function InvitationCard() {
   return (
@@ -10,11 +12,11 @@ export default function InvitationCard() {
       transition={{ duration: 1.2, ease: "easeOut" }}
     >
       {/* Decorative Elephants */}
-      <img src="/assets/wedding_elephant.png" alt="Decorative Elephant" className="elephant-left" />
-      <img src="/assets/wedding_elephant.png" alt="Decorative Elephant" className="elephant-right" />
+      <img src={weddingElephant} alt="Decorative Elephant" className="elephant-left" />
+      <img src={weddingElephant} alt="Decorative Elephant" className="elephant-right" />
 
       {/* Couple Caricature */}
-      <img src="/assets/indian_couple.png" alt="Indian Couple Caricature" className="couple-caricature" />
+      <img src={indianCouple} alt="Indian Couple Caricature" className="couple-caricature" />
 
       <motion.div
         initial={{ opacity: 0 }}
