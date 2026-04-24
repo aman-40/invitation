@@ -1,0 +1,188 @@
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Cinzel:wght@400;600&display=swap');
+
+:root {
+  /* Royal Indian Palette */
+  --color-bg-teal: #2C6B6F;
+  --color-card-cream: #FAF3E0;
+  --color-gold-light: #DFB86C;
+  --color-gold-dark: #A67C00;
+  --color-text-teal: #1A4D51;
+  --color-text-gold: #966b00;
+  
+  --font-decorative: 'Great Vibes', cursive;
+  --font-heading: 'Playfair Display', serif;
+  --font-classic: 'Cinzel', serif;
+
+  --shadow-royal: 0 15px 35px rgba(0, 0, 0, 0.4);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-heading);
+  background-color: var(--color-bg-teal);
+  color: var(--color-text-teal);
+  line-height: 1.6;
+  overflow: hidden; /* Prevent scrolling for the main card view */
+}
+
+/* Mandala Background */
+.background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -2;
+  background-image: url('/assets/mandala_pattern.png');
+  background-size: cover;
+  background-position: center;
+  opacity: 0.8;
+  filter: brightness(0.85); /* Slightly darken to make the card pop */
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 600;
+}
+
+/* App Container */
+.app-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  width: 100vw;
+  z-index: 1;
+  padding: 2rem 0;
+}
+
+/* Invitation Card Styling (Portrait, Arch Style) */
+.invitation-card {
+  background-color: var(--color-card-cream);
+  border: 8px solid var(--color-gold-light);
+  /* Use a complex clip-path or heavy border-radius for the arch effect */
+  border-radius: 40px; 
+  padding: 3rem 2rem;
+  text-align: center;
+  width: 95%;
+  max-width: 500px;
+  height: 85vh; /* Portrait ratio */
+  position: relative;
+  box-shadow: var(--shadow-royal);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: visible; /* To allow elements to overflow the card */
+}
+
+/* Inner Gold Border */
+.invitation-card::before {
+  content: '';
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  right: 15px;
+  bottom: 15px;
+  border: 2px dashed var(--color-gold-dark);
+  border-radius: 25px;
+  pointer-events: none;
+  opacity: 0.6;
+}
+
+/* Decorative Elements */
+.elephant-left, .elephant-right {
+  position: absolute;
+  top: -40px;
+  width: 150px;
+  filter: drop-shadow(0 5px 5px rgba(0,0,0,0.3));
+}
+
+.elephant-left {
+  left: -20px;
+}
+
+.elephant-right {
+  right: -20px;
+  transform: scaleX(-1); /* Flip right elephant */
+}
+
+.couple-caricature {
+  position: absolute;
+  bottom: -30px;
+  left: -20px;
+  width: 220px;
+  filter: drop-shadow(2px 5px 10px rgba(0,0,0,0.4));
+}
+
+/* Entry Screen */
+.entry-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(44, 107, 111, 0.95); /* Deep teal overlay */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 100;
+  backdrop-filter: blur(10px);
+}
+
+.open-button {
+  margin-top: 3rem;
+  padding: 1rem 3rem;
+  font-family: var(--font-classic);
+  font-size: 1.2rem;
+  letter-spacing: 3px;
+  background-color: var(--color-gold-light);
+  color: var(--color-text-teal);
+  border: 2px solid var(--color-gold-dark);
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.4s ease;
+  font-weight: 600;
+  text-transform: uppercase;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.open-button:hover {
+  background-color: var(--color-gold-dark);
+  color: var(--color-card-cream);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+}
+
+/* Audio Button */
+.audio-button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: var(--color-gold-light);
+  color: var(--color-text-teal);
+  border: none;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 50;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+.audio-button:hover {
+  transform: scale(1.1);
+  background-color: var(--color-gold-dark);
+  color: var(--color-card-cream);
+}
