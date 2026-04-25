@@ -22,10 +22,10 @@ export default function InvitationCard() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 0.8, duration: 1 }}
-        style={{ zIndex: 10, paddingBottom: '4rem' }}
+        style={{ zIndex: 10, paddingBottom: '2rem' }}
       >
         <p style={{ 
-          fontSize: '1rem', 
+          fontSize: 'var(--fs-p)', 
           letterSpacing: '2px', 
           textTransform: 'uppercase', 
           color: 'var(--color-text-teal)',
@@ -36,7 +36,7 @@ export default function InvitationCard() {
         </p>
 
         <h1 style={{ 
-          fontSize: '4.5rem', 
+          fontSize: 'var(--fs-h1-large)', 
           color: 'var(--color-gold-dark)', 
           margin: '0',
           lineHeight: '1',
@@ -46,7 +46,7 @@ export default function InvitationCard() {
           Save
         </h1>
         <h1 style={{ 
-          fontSize: '2.5rem', 
+          fontSize: 'var(--fs-h1-small)', 
           color: 'var(--color-text-teal)', 
           margin: '-10px 0 0',
           lineHeight: '1',
@@ -55,7 +55,7 @@ export default function InvitationCard() {
           the
         </h1>
         <h1 style={{ 
-          fontSize: '4.5rem', 
+          fontSize: 'var(--fs-h1-large)', 
           color: 'var(--color-gold-dark)', 
           margin: '-5px 0 1.5rem',
           lineHeight: '1',
@@ -68,7 +68,7 @@ export default function InvitationCard() {
         <div style={{ width: '60px', height: '2px', backgroundColor: 'var(--color-gold-light)', margin: '0 auto 1.5rem' }}></div>
 
         <h3 style={{ 
-          fontSize: '2rem', 
+          fontSize: 'var(--fs-h3)', 
           color: 'var(--color-text-teal)', 
           marginBottom: '1rem',
           fontFamily: 'var(--font-classic)'
@@ -77,7 +77,7 @@ export default function InvitationCard() {
         </h3>
         
         <p style={{
-          fontSize: '0.9rem',
+          fontSize: 'var(--fs-p-sub)',
           lineHeight: '1.6',
           color: '#555',
           fontFamily: 'var(--font-heading)',
@@ -92,7 +92,7 @@ export default function InvitationCard() {
         <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '1rem' }}>
           <div>
             <p style={{ 
-              fontSize: '1.4rem', 
+              fontSize: 'var(--fs-date)', 
               fontWeight: 700, 
               color: 'var(--color-text-teal)',
               fontFamily: 'var(--font-classic)'
@@ -100,7 +100,7 @@ export default function InvitationCard() {
               06 MAY 2026
             </p>
             <p style={{ 
-              fontSize: '0.9rem', 
+              fontSize: '0.8rem', 
               color: 'var(--color-gold-dark)',
               textTransform: 'uppercase',
               letterSpacing: '1px',
@@ -112,7 +112,7 @@ export default function InvitationCard() {
 
           <div>
             <p style={{ 
-              fontSize: '1.2rem', 
+              fontSize: 'var(--fs-venue)', 
               color: 'var(--color-text-teal)',
               fontFamily: 'var(--font-classic)',
               fontWeight: 600
@@ -120,7 +120,7 @@ export default function InvitationCard() {
               Makhdumpur
             </p>
             <p style={{ 
-              fontSize: '0.8rem', 
+              fontSize: '0.7rem', 
               color: 'var(--color-gold-dark)',
               textTransform: 'uppercase',
               letterSpacing: '2px'

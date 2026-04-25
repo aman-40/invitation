@@ -14,6 +14,16 @@
   --font-classic: 'Cinzel', serif;
 
   --shadow-royal: 0 15px 35px rgba(0, 0, 0, 0.4);
+
+  /* Responsive Font Sizes */
+  --fs-h1-large: 4.5rem;
+  --fs-h1-small: 2.5rem;
+  --fs-h2: 4.5rem;
+  --fs-h3: 2rem;
+  --fs-p: 1rem;
+  --fs-p-sub: 0.9rem;
+  --fs-date: 1.4rem;
+  --fs-venue: 1.2rem;
 }
 
 * {
@@ -27,7 +37,7 @@ body {
   background-color: var(--color-bg-teal);
   color: var(--color-text-teal);
   line-height: 1.6;
-  overflow: hidden; /* Prevent scrolling for the main card view */
+  overflow-x: hidden; /* Prevent horizontal scrolling */
 }
 
 /* Mandala Background */
@@ -66,13 +76,12 @@ h1, h2, h3, h4, h5, h6 {
 .invitation-card {
   background-color: var(--color-card-cream);
   border: 8px solid var(--color-gold-light);
-  /* Use a complex clip-path or heavy border-radius for the arch effect */
   border-radius: 40px; 
   padding: 3rem 2rem;
   text-align: center;
   width: 95%;
   max-width: 500px;
-  height: 85vh; /* Portrait ratio */
+  min-height: 85vh; /* Portrait ratio */
   position: relative;
   box-shadow: var(--shadow-royal);
   display: flex;
@@ -80,6 +89,7 @@ h1, h2, h3, h4, h5, h6 {
   justify-content: center;
   align-items: center;
   overflow: visible; /* To allow elements to overflow the card */
+  margin: 2rem auto;
 }
 
 /* Inner Gold Border */
@@ -102,6 +112,7 @@ h1, h2, h3, h4, h5, h6 {
   top: -40px;
   width: 150px;
   filter: drop-shadow(0 5px 5px rgba(0,0,0,0.3));
+  z-index: 20;
 }
 
 .elephant-left {
@@ -119,6 +130,7 @@ h1, h2, h3, h4, h5, h6 {
   left: -20px;
   width: 220px;
   filter: drop-shadow(2px 5px 10px rgba(0,0,0,0.4));
+  z-index: 20;
 }
 
 /* Entry Screen */
@@ -135,6 +147,15 @@ h1, h2, h3, h4, h5, h6 {
   align-items: center;
   z-index: 100;
   backdrop-filter: blur(10px);
+  padding: 1rem;
+}
+
+.entry-content {
+  text-align: center;
+  z-index: 10;
+  padding: 2rem;
+  width: 100%;
+  max-width: 600px;
 }
 
 .open-button {
@@ -185,4 +206,89 @@ h1, h2, h3, h4, h5, h6 {
   transform: scale(1.1);
   background-color: var(--color-gold-dark);
   color: var(--color-card-cream);
+}
+
+/* Media Queries for Responsiveness */
+@media screen and (max-width: 600px) {
+  :root {
+    --fs-h1-large: 3.5rem;
+    --fs-h1-small: 2rem;
+    --fs-h2: 3.5rem;
+    --fs-h3: 1.8rem;
+    --fs-p: 0.9rem;
+    --fs-p-sub: 0.85rem;
+    --fs-date: 1.2rem;
+    --fs-venue: 1.1rem;
+  }
+
+  .invitation-card {
+    padding: 2.5rem 1.5rem;
+    border-width: 6px;
+    border-radius: 30px;
+  }
+
+  .elephant-left, .elephant-right {
+    width: 100px;
+    top: -30px;
+  }
+
+  .couple-caricature {
+    width: 180px;
+    bottom: -20px;
+    left: -10px;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  :root {
+    --fs-h1-large: 2.8rem;
+    --fs-h1-small: 1.6rem;
+    --fs-h2: 2.8rem;
+    --fs-h3: 1.5rem;
+    --fs-p: 0.85rem;
+    --fs-p-sub: 0.8rem;
+    --fs-date: 1.1rem;
+    --fs-venue: 1rem;
+  }
+
+  .invitation-card {
+    padding: 2rem 1rem;
+    border-width: 4px;
+    border-radius: 20px;
+    width: 98%;
+  }
+
+  .elephant-left, .elephant-right {
+    width: 80px;
+    top: -25px;
+  }
+
+  .elephant-left {
+    left: -10px;
+  }
+
+  .elephant-right {
+    right: -10px;
+  }
+
+  .couple-caricature {
+    width: 150px;
+    bottom: -15px;
+    left: -5px;
+  }
+
+  .open-button {
+    padding: 0.8rem 2rem;
+    font-size: 1rem;
+    letter-spacing: 2px;
+  }
+}
+
+@media screen and (max-height: 700px) {
+  .invitation-card {
+    height: auto;
+    min-height: 90vh;
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+  }
 }
